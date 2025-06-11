@@ -80,15 +80,42 @@ class WeatherCard extends StatelessWidget {
               height: 20,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text(
-                  style: const TextStyle(fontFamily: "RobotoFlex", fontSize: 16),
-                  "Humidity: ${weather.humidity}%",
+                // Humidity
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                        width: 30,
+                        height: 30,
+                        'images/humidity.png'
+                    ),
+                    const SizedBox(height: 10,),
+                    Text(
+                      style: TextStyle(
+                          fontFamily: 'RobotoFlex',
+                          fontSize: 16
+                      ),
+                      "Humidity: ${weather.humidity}%",
+                    ),
+                  ],
                 ),
-                Text(
-                  style: const TextStyle(fontFamily: "RobotoFlex", fontSize: 16),
-                  "Wind Speed: ${weather.windKph} Km/h",
+                // Wind Speed
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      width: 30,
+                      height: 30,
+                      'images/windy.png'
+                    ),
+                    const SizedBox(height: 10,),
+                    Text(
+                      style: const TextStyle(fontFamily: "RobotoFlex", fontSize: 16),
+                      "Wind Speed: ${weather.windKph} Km/h",
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -98,24 +125,52 @@ class WeatherCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
+                // Sunrise
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
                         width: 40,
                         height: 40,
                         "images/sunrise.png"),
-                    const Text("Sunrise"),
-                    Text(weather.sunrise)
+                    const Text(
+                        style: TextStyle(
+                          fontFamily: 'RobotoFlex',
+                          fontSize: 16
+                        ),
+                        "Sunrise"
+                    ),
+                    Text(
+                        style: TextStyle(
+                            fontFamily: 'RobotoFlex',
+                            fontSize: 16
+                        ),
+                        weather.sunrise
+                    )
                   ],
                 ),
+                // Sunset
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
                         width: 40,
                         height: 40,
                         "images/sunset.png"),
-                    const Text("Sunset"),
-                    Text(weather.sunset)
+                    const Text(
+                        style: TextStyle(
+                            fontFamily: 'RobotoFlex',
+                            fontSize: 16
+                        ),
+                        "Sunset"
+                    ),
+                    Text(
+                        style: TextStyle(
+                            fontFamily: 'RobotoFlex',
+                            fontSize: 16
+                        ),
+                        weather.sunset
+                    )
                   ],
                 )
               ],
